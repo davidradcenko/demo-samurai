@@ -1,0 +1,33 @@
+.NameForm {
+    font-size: 25px;
+    text-transform: uppercase;
+    opacity: 90%;
+}
+
+.Dialogs {
+    display: flex;
+}
+
+.Persons {
+    width: 50%;
+    border-right: 3px solid black;
+    min-height: 400px;
+}
+
+.Persons_Dialogs {
+    width: 50%;
+    min-height: 400px;
+}
+
+.divDialogs {
+    margin-left: 10px;
+}
+
+.Message_Dialog {
+    display: flex;
+    justify-content: center;
+}
+
+.Message_Dialog textarea {
+    width: 80%;
+}

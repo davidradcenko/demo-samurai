@@ -1,0 +1,24 @@
+header {
+    width: 100%;
+    background: url("https://images.wallpaperscraft.ru/image/fon_pyatna_temnyy_91678_300x168.jpg") center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    height: 200px;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 135px;
+    width: 150px;
+    margin-left: 30px;
+}
+
+.logo {
+    background-color: none;
+}
+
+.logiBloc {
+    float: right;
+}

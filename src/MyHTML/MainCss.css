@@ -1,0 +1,14 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.conteiner {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.content {
+    display: flex;
+    margin-top: 20px;
+}

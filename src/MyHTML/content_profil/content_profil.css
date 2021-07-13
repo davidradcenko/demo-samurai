@@ -1,0 +1,67 @@
+.content_profil {
+    margin-left: 20px;
+    width: 70%;
+}
+
+.profil_img {
+    width: 100%;
+    height: 200px;
+    background: url("https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg") center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.info_user {
+    margin-top: 20px;
+    display: flex;
+}
+
+.info_user img {
+    width: 100px;
+    height: 100px;
+}
+
+.text_info_user {
+    margin-left: 40px;
+}
+
+.title {
+    font-size: 25px;
+    margin-top: 0px;
+}
+
+.subtitle {
+    font-size: 15px;
+}
+
+.posts h1 {
+    font-size: 25px;
+}
+
+.posts textarea {
+    width: 90%;
+    height: 50px;
+    background-color: beige;
+}
+
+.posts button {
+    display: block;
+    margin-left: auto;
+
+}
+
+.message {
+    margin-top: 5px;
+}
+
+.mess {
+    display: flex;
+    margin-top: 10px;
+}
+
+.mess img {
+    width: 50px;
+    height: 50px;
+    background-color: antiquewhite;
+    border-radius: 50%;
+}

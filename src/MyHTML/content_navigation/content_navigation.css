@@ -1,0 +1,26 @@
+.content_navigation {
+    width: 30%;
+    background-color: bisque;
+    display: flex;
+    justify-content: center;
+}
+
+.navigation_nav {
+    margin: 0 auto;
+}
+
+.navigation_nav a {
+    display: block;
+    font-size: 20px;
+    padding: 10px 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.navigation_nav a:hover {
+    color: red;
+}
+
+.navigation_nav a.active {
+    color: blue;
+}
