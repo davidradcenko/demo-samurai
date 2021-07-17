@@ -40,7 +40,7 @@ export const ProfileAPI={
     }
 }
 
-
+debugger;
 export const authAPI = {
     me(){
        return  instance.get(`auth/me`,{withCredentials:true})
@@ -49,8 +49,7 @@ export const authAPI = {
        
        return  instance.post(`auth/login`,{email,password,rememberMe})
     },
-    logout(email,password,rememberMe=false){
-       
+    logout(){ 
        return  instance.delete(`auth/login`);
     }
 }
