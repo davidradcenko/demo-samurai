@@ -8,7 +8,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 let rerenderEntireTree=()=>{
 reactDom.render(
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
     <Provider store={store}>
           <App />
     </Provider> 
@@ -19,7 +19,8 @@ reactDom.render(
 }
 window.store=store;
 rerenderEntireTree(store.getState());
-// store.subscribe(()=>{
-//     let state=store.getState();
-// rerenderEntireTree(state)
-// });
+
+
+//  reactDom.render(
+//     <SamuraiJSPApp/>
+//     , document.getElementById('root')
