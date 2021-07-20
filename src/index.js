@@ -4,23 +4,26 @@ import { Provider } from 'react-redux';
 import App from './App';
  import store from './Redux/Redux-Store';
 import { BrowserRouter } from 'react-router-dom';
+import SamuraiJSPApp from './App';
 
 
-let rerenderEntireTree=()=>{
-reactDom.render(
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
-    <Provider store={store}>
-          <App />
-    </Provider> 
-    </BrowserRouter>
-    , document.getElementById('root')
-
-);
-}
-window.store=store;
-rerenderEntireTree(store.getState());
-
-
-//  reactDom.render(
-//     <SamuraiJSPApp/>
+// let rerenderEntireTree=()=>{
+// reactDom.render(
+//     <BrowserRouter basename={process.env.PUBLIC_URL}>
+//     <Provider store={store}>
+//           <App />
+//     </Provider> 
+//     </BrowserRouter>
 //     , document.getElementById('root')
+
+// );
+// }
+
+
+
+ reactDom.render(
+    <SamuraiJSPApp/>
+    , document.getElementById('root'));
+
+    window.store=store;
+//rerenderEntireTree(store.getState());

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Component } from 'react';
 import { connect } from 'react-redux';
-import { Route, withRouter } from 'react-router-dom';
+import { HashRouter, Route, withRouter } from 'react-router-dom';
 import { compose } from 'redux';
 import Preloader from './MyHTML/common/Preloader/Preloader.js';
 import Navigation from './MyHTML/content_navigation/content_navigation.js';
@@ -55,17 +55,17 @@ const mapStateToProps=(state)=>({
 initialized: state.app.initialized
 })
 
-export default compose( 
+let AppContainer= compose( 
   withRouter,
   connect(mapStateToProps,{initializeApp}))(App);
 
 
-  // const SamuraiJSPApp=(props)=>{
-  //   return  <BrowserRouter basename={process.env.PUBLIC_URL}>
-  //    <Provider store={store}>
-  //          <App />
-  //    </Provider> 
-  //   </BrowserRouter>
-  // }
+  const SamuraiJSPApp=(props)=>{
+     return  <HashRouter>
+      <Provider store={store}>
+            <AppContainer />
+      </Provider> 
+     </HashRouter>
+   }
 
-  // export default SamuraiJSPApp;
+   export default SamuraiJSPApp;
