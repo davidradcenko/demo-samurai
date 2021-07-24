@@ -4,7 +4,7 @@ import { ProfileAPI, userAPI } from "../API/api";
 const PROFIL_ADD_NEWPOST = 'PROFIL_ADD_NEWPOST';
 const SET_USER_PROFILE = 'SET_USER_PROFILE';
 const SET_STATUS = 'SET_STATUS';
-
+const SAVE_FOTO='SAVE_FOTO';
 
 
 
@@ -55,7 +55,11 @@ const ProfilPageReducer = (state = f, active) => {
                 ...state,
                 status: active.test
             };
-
+        case SAVE_FOTO:
+            return{
+                ...state,
+                profil:{...state.profil,photos: active.foto}
+            }
         default: return state;
     }
 }
@@ -79,6 +83,7 @@ export const newPost = (newMessage) => {
         text:newMessage
     }
 };
+export const saveFotoSuccess=(foto)=>({type:SAVE_FOTO,foto})
 export const getUserProfile=(userId)=>async(dispatch)=>{
      
    let Response=await userAPI.getProfile(userId)
@@ -99,4 +104,14 @@ export const updateStatus=(status)=>async(dispatch)=>{
            dispatch(setStatus(status));
     }
 }
+
+
+export const saveFoto =(file)=>async (dispatch)=>{
+    let Response=await ProfileAPI.saveFoto(file)
+           if(Response.data.resultCode===0){
+           dispatch(saveFotoSuccess(Response.data.data.photos));
+    }
+}
+
+
 export default ProfilPageReducer;

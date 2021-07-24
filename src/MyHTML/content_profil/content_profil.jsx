@@ -42,6 +42,8 @@ const Profil = React.memo(props => {
     } else {
         var oldMass = state.message.map(mess => <Message key={mess.id} text={mess.text} />);
         var newmass = <ProfileUsers
+            isOwner={props.isOwner}
+            saveFoto={props.saveFoto}
             fullName={state.profil.fullName}
             t={state.profil.photos.small}
             aboutMe={state.profil.aboutMe}
