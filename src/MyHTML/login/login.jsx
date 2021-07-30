@@ -6,19 +6,19 @@ import { login } from '../../Redux/authReduser';
 import { maxlengthCreator, requiredField } from '../../Redux/utils/valedators/valedators';
 import { createField, TextInputComponent } from '../common/FormsControls/FormsControls';
 import style from "../common/FormsControls/FormCssControls.module.css"
-const maxlenth15 = maxlengthCreator(50);
+const maxlenth20 = maxlengthCreator(25);
 const LoginForm = ({ handleSubmit, error }) => {
     return (
 
         <form onSubmit={handleSubmit}>
 
-            {createField("email", "email", requiredField, maxlenth15, TextInputComponent)}
+            {createField("email", "email", [requiredField, maxlenth20], TextInputComponent)}
             {/* <Field validate={[requiredField, maxlenth15]} placeholder="email" name={"email"} component={TextInputComponent} /> */}
-            {createField("Password", "password", requiredField, maxlenth15, TextInputComponent, { type: "password" })}
+            {createField("Password", "password", [requiredField, maxlenth20], TextInputComponent, { type: "password" })}
 
             <div>
                 remember me!
-                <Field validate={[requiredField, maxlenth15]} type={"Checkbox"} name={"rememberMe"} component={TextInputComponent} />
+                <Field validate={[requiredField, maxlenth20]} type={"Checkbox"} name={"rememberMe"} component={TextInputComponent} />
             </div>
             {error &&
                 <div className={style.formSummaryError}>

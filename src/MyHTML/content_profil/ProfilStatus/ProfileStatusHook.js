@@ -31,14 +31,14 @@ const deactivateEditMode=()=>{
         return (
             <>
                 {!editMode &&
-                    <div className="">
+                    
                         <span onDoubleClick={activateMode} >{props.status || '------'}</span>
-                    </div>
+                   
                 }
                 {editMode &&
-                    <div className="">
+                   
                         <input onChange={onStatusChange} onBlur={deactivateEditMode} autoFocus={true} value={status}  />
-                    </div>
+                   
                 }
             </>
         );

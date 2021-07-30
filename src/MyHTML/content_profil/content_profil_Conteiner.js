@@ -5,7 +5,7 @@ import {  withRouter } from 'react-router';
 import { compose } from 'redux';
 
 
-import { newPost,getUserProfile,getStatus,updateStatus, saveFoto } from '../../Redux/ProfilPageReducer.js';
+import { newPost,getUserProfile,getStatus,updateStatus, saveFoto,saveProfile } from '../../Redux/ProfilPageReducer.js';
 import {  setFetching } from '../../Redux/UsersPageReducer';
 import Preloader from '../common/Preloader/Preloader.js';
 import Profil from './content_profil.jsx';
@@ -41,8 +41,14 @@ componentDidUpdate(prevProps,prevState,snapshot){
 render(){
     
     return  <> {this.props.isFetching ?<Preloader/>:null}
-        <Profil saveFoto={this.props.saveFoto}  state={this.props.state} isOwner={!this.props.match.params.userId}
-        newPost={this.props.newPost} profil={this.props.profil} status={this.props.status} updateStatus={this.props.updateStatus}/>
+        <Profil  saveFoto={this.props.saveFoto} 
+         state={this.props.state} 
+         isOwner={!this.props.match.params.userId}
+        newPost={this.props.newPost} 
+        profil={this.props.profil}
+         status={this.props.status} 
+         updateStatus={this.props.updateStatus}
+         saveProfile={this.props.saveProfile}/>
     )
     </>
 }
@@ -66,7 +72,7 @@ let mapStateToProps=(state)=>{
 // const SuperContent_profil_Conteiner= connect(mapStateToProps,{setFetching,getUserProfile,updateNewPostText,newPost})(WithUrlDataConteinerComponent);
 
 export default compose(
-    connect(mapStateToProps,{saveFoto,setFetching,getUserProfile,newPost,getStatus,updateStatus}),
+    connect(mapStateToProps,{saveFoto,setFetching,getUserProfile,newPost,getStatus,updateStatus,saveProfile}),
     withRouter,
     // WithAuthRedirect
 )(ProfileContainer);

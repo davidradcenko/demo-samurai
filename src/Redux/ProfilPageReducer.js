@@ -1,3 +1,4 @@
+import { stopSubmit } from "redux-form";
 import { ProfileAPI, userAPI } from "../API/api";
 
 
@@ -112,6 +113,18 @@ export const saveFoto =(file)=>async (dispatch)=>{
            dispatch(saveFotoSuccess(Response.data.data.photos));
     }
 }
-
+export const saveProfile =(profile)=>async (dispatch, getState)=>{
+    const userrId=getState().auth.userId;
+    const Response=await ProfileAPI.saveProfile(profile)
+    debugger;
+           if(Response.data.resultCode===0){
+           dispatch(getUserProfile(userrId));
+    }else{
+        dispatch(stopSubmit("edit-profile",{_error: Response.data.messages[0]}))
+        return Promise.reject(Response.data.messages[0]);
+       // способ отображения ошибки в input
+       // dispatch(stopSubmit("edit-profile",{"contacts": { "facebook": Response.data.messages[0]}}))
+    }
+}
 
 export default ProfilPageReducer;

@@ -16,32 +16,18 @@ import ProfileUsers from './profil_users/Prafil_users'
 
 
 const Profil = React.memo(props => {
-
-    // componentDidUpdate() {
-    //     setTimeout(() => {
-    //         this.setState({ a: 12 })
-    //     }, 3000)
-    // }
-    // shouldComponentUpdate(nextProps, nextState) {
-    //     return nextProps != this.props || nextState != this.state;
-    // }
-
-
-    //let state=props.store.getState().profilPage;
     let state = props.state;
-    //let s = React.createRef();
-
-    // let ONnewPost = () => {
-    //     props.newPost();
-    // }
-
-
 
     if (!props.profil) {
         <Preloader />
     } else {
         var oldMass = state.message.map(mess => <Message key={mess.id} text={mess.text} />);
         var newmass = <ProfileUsers
+            lookingForAJob={state.profil.lookingForAJob}
+            lookingForAJobDescription={state.profil.lookingForAJobDescription}
+            status={props.status}
+            saveProfile={props.saveProfile}
+            updateStatus={props.updateStatus}
             isOwner={props.isOwner}
             saveFoto={props.saveFoto}
             fullName={state.profil.fullName}
@@ -59,7 +45,7 @@ const Profil = React.memo(props => {
 
     return (
         <div className="content_profil">
-            <ProfileStatusHook status={props.status} updateStatus={props.updateStatus} />
+
             {/* <div className="profil_img"></div> */}
             {newmass}
             <div className="posts">

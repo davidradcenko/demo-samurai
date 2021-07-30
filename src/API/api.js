@@ -38,6 +38,9 @@ export const ProfileAPI={
     updateStatus(status){
         return instance.put(`profile/status/`,{status:status}) ;
     },
+     saveProfile(profile){
+        return instance.put(`profile/`, profile) ;
+    },
     saveFoto(file){
         const fotmData =new FormData();
         fotmData.append("image",file)

@@ -26,8 +26,13 @@ export const TextInputComponent = (props) => {
     return <FormControls {...props}><input {...input} {...restprops} /></FormControls>
 }
 
-export const createField = (placeholder, name, requiredField, maxlenth15, component, props = {}, text = "") => (
+// export const createField = (placeholder, name, requiredField, maxlenth15, component, props = {}, text = "") => (
+//     <div>
+//         <Field validate={[requiredField, maxlenth15]} placeholder={placeholder} name={name} component={component}  {...props} />{text}
+//     </div>
+// )
+export const createField = (placeholder, name, validate, component, props = {}, text = "") => (
     <div>
-        <Field validate={[requiredField, maxlenth15]} placeholder={placeholder} name={name} component={component}  {...props} />{text}
+        <Field placeholder={placeholder} validate={validate} name={name} component={component}  {...props} />{text}
     </div>
 )
