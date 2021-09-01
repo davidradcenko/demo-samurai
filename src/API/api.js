@@ -52,16 +52,20 @@ export const ProfileAPI={
     }
 }
 
-debugger;
 export const authAPI = {
     me(){
        return  instance.get(`auth/me`,{withCredentials:true})
     },
-    login(email,password,rememberMe=false){
+    login(email,password,rememberMe=false,captcha=null){
        
-       return  instance.post(`auth/login`,{email,password,rememberMe})
+       return  instance.post(`auth/login`,{email,password,rememberMe,captcha})
     },
     logout(){ 
        return  instance.delete(`auth/login`);
+    }
+}
+export const securityAPI = {
+    grtCapchaURL(){
+       return  instance.get(`security/get-captcha-url`)
     }
 }

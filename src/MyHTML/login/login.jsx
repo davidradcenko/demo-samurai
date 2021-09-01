@@ -7,7 +7,8 @@ import { maxlengthCreator, requiredField } from '../../Redux/utils/valedators/va
 import { createField, TextInputComponent } from '../common/FormsControls/FormsControls';
 import style from "../common/FormsControls/FormCssControls.module.css"
 const maxlenth20 = maxlengthCreator(25);
-const LoginForm = ({ handleSubmit, error }) => {
+const LoginForm = ({ handleSubmit, error, capthaUrl }) => {
+    debugger;
     return (
 
         <form onSubmit={handleSubmit}>
@@ -20,6 +21,8 @@ const LoginForm = ({ handleSubmit, error }) => {
                 remember me!
                 <Field validate={[requiredField, maxlenth20]} type={"Checkbox"} name={"rememberMe"} component={TextInputComponent} />
             </div>
+            {capthaUrl && <img src={capthaUrl.capthaUurlrl} />}
+            {capthaUrl && createField("Symbols from image", "capthaUrl", [requiredField], TextInputComponent, {})}
             {error &&
                 <div className={style.formSummaryError}>
                     {error}
@@ -33,18 +36,20 @@ const LoginForm = ({ handleSubmit, error }) => {
 const LoginReduxForm = reduxForm({ form: 'login' })(LoginForm)
 
 const Login = (props) => {
+    debugger;
     const onSubmit = (formData) => {
-        props.login(formData.email, formData.password, formData.rememberMe);
+        props.login(formData.email, formData.password, formData.rememberMe, formData.capthaUrl);
     }
     if (props.isAuth) {
         return <Redirect to="/profil" />
     }
     return <div>
         <h1>Login</h1>
-        <LoginReduxForm onSubmit={onSubmit} />
+        <LoginReduxForm capthaUrl={props.capthaUrl} onSubmit={onSubmit} />
     </div>
 }
 const mapStateToProps = (state) => ({
-    isAuth: state.auth.isAuth
+    isAuth: state.auth.isAuth,
+    capthaUrl: state.auth.capthaUrl
 })
 export default connect(mapStateToProps, { login })(Login);

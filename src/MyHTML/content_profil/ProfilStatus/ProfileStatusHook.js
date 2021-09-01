@@ -22,12 +22,7 @@ setEditMade(true)
 const deactivateEditMode=()=>{
     setEditMade(false);
     props.updateStatus(status);
-}
-
-// let stateWithSetState=useState();
-// let editMode =stateWithSetState[0];
-// let setEditMode=stateWithSetState[1];
-   
+}   
         return (
             <>
                 {!editMode &&
