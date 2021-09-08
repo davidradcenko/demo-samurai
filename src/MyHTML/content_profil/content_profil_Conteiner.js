@@ -5,7 +5,7 @@ import {  withRouter } from 'react-router';
 import { compose } from 'redux';
 
 
-import { newPost,getUserProfile,getStatus,updateStatus, saveFoto,saveProfile } from '../../Redux/ProfilPageReducer.js';
+import { newPost,getUserProfile,getStatus,updateStatus, saveFoto,saveProfile } from '../../Redux/ProfilPageReducer.ts';
 import {  setFetching } from '../../Redux/UsersPageReducer';
 import Preloader from '../common/Preloader/Preloader.js';
 import Profil from './content_profil.jsx';

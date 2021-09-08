@@ -11,8 +11,8 @@ import HeaderConteiner from './MyHTML/header/HeaderContainer.js';
 import Login from './MyHTML/login/login.jsx';
 import './MyHTML/MainCss.css';
 import store from './Redux/Redux-Store';
-import SuperUsersContainer from './MyHTML/Users/UsersContainer.js';
-import { initializeApp } from './Redux/app-reduser.js';
+import SuperUsersContainer from './MyHTML/Users/UsersContainer.tsx';
+import { initializeApp } from './Redux/app-reduser.ts';
 import { WithSuspens } from './hoc/WithSuspens.js';
 //
 
@@ -51,7 +51,7 @@ class App extends Component {
             <Route exact path="/"  render={() => <Redirect to={"/Profil"}/>  }/>
             <Route path="/Profil/:userId?"  render={ WithSuspens(ProfileContainer)}/>
             <Route path="/Dialogs" render={ WithSuspens(DialogsContainer)}/>
-            <Route path="/Users" render={()=><SuperUsersContainer  />}/>
+            <Route path="/Users" render={()=><SuperUsersContainer  pageTitle={"Самурай"} />}/>
             <Route path="/login" render={()=><Login  />}/>
             <Route path="*" render={()=><div>404 Not FOUND</div>}/>
           </Switch>
