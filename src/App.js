@@ -8,7 +8,7 @@ import Navigation from './MyHTML/content_navigation/content_navigation.js';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import HeaderConteiner from './MyHTML/header/HeaderContainer.js';
-import Login from './MyHTML/login/login.jsx';
+import Login from './MyHTML/login/login.tsx';
 import './MyHTML/MainCss.css';
 import store from './Redux/Redux-Store';
 import SuperUsersContainer from './MyHTML/Users/UsersContainer.tsx';

@@ -2,8 +2,8 @@ import React from 'react';
 
 import { Field, reduxForm } from 'redux-form';
 
-import { maxlengthCreator, requiredField } from '../../Redux/utils/valedators/valedators.js';
-import { TextAreaComponent } from '../common/FormsControls/FormsControls.jsx';
+import { maxlengthCreator, requiredField } from '../../Redux/utils/valedators/valedators.ts';
+import { TextAreaComponent } from '../common/FormsControls/FormsControls.tsx';
 import Preloader from '../common/Preloader/Preloader.js';
 
 
