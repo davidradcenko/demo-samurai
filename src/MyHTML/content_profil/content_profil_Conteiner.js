@@ -6,7 +6,8 @@ import { compose } from 'redux';
 
 
 import { newPost,getUserProfile,getStatus,updateStatus, saveFoto,saveProfile } from '../../Redux/ProfilPageReducer.ts';
-import {  setFetching } from '../../Redux/UsersPageReducer';
+import { actions } from '../../Redux/UsersPageReducer';
+//import {  setFetching } from '../../Redux/UsersPageReducer';
 import Preloader from '../common/Preloader/Preloader.js';
 import Profil from './content_profil.jsx';
 
@@ -20,9 +21,9 @@ let userId=this.props.match.params.userId;
              this.props.history.push("/login");
          }
         } 
-         this.props.setFetching(true);
+         actions.setFetching(true);
         this.props.getUserProfile(userId);
-         this.props.setFetching(false);
+         actions.setFetching(false);
 
  this.props.getStatus(userId);
   }
@@ -72,7 +73,7 @@ let mapStateToProps=(state)=>{
 // const SuperContent_profil_Conteiner= connect(mapStateToProps,{setFetching,getUserProfile,updateNewPostText,newPost})(WithUrlDataConteinerComponent);
 
 export default compose(
-    connect(mapStateToProps,{saveFoto,setFetching,getUserProfile,newPost,getStatus,updateStatus,saveProfile}),
+    connect(mapStateToProps,{saveFoto,getUserProfile,newPost,getStatus,updateStatus,saveProfile}),
     withRouter,
     // WithAuthRedirect
 )(ProfileContainer);
